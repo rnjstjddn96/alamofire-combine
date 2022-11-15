@@ -1,13 +1,13 @@
 //
-//  Combine_AlamofireUITestsLaunchTests.swift
-//  Combine+AlamofireUITests
+//  Alamofire_CombineUITestsLaunchTests.swift
+//  Alamofire+CombineUITests
 //
 //  Created by 권성우 on 2022/11/15.
 //
 
 import XCTest
 
-final class Combine_AlamofireUITestsLaunchTests: XCTestCase {
+final class Alamofire_CombineUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

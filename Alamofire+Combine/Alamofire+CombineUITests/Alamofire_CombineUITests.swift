@@ -1,13 +1,13 @@
 //
-//  Combine_AlamofireUITests.swift
-//  Combine+AlamofireUITests
+//  Alamofire_CombineUITests.swift
+//  Alamofire+CombineUITests
 //
 //  Created by 권성우 on 2022/11/15.
 //
 
 import XCTest
 
-final class Combine_AlamofireUITests: XCTestCase {
+final class Alamofire_CombineUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

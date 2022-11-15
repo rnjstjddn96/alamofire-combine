@@ -1,14 +1,14 @@
 //
-//  Combine_AlamofireTests.swift
-//  Combine+AlamofireTests
+//  Alamofire_CombineTests.swift
+//  Alamofire+CombineTests
 //
 //  Created by 권성우 on 2022/11/15.
 //
 
 import XCTest
-@testable import Combine_Alamofire
+@testable import Alamofire_Combine
 
-final class Combine_AlamofireTests: XCTestCase {
+final class Alamofire_CombineTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
