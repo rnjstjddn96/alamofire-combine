@@ -14,14 +14,37 @@ struct ContentView: View {
     @State var error: APIError?
     
     var body: some View {
-        VStack {
-            ForEach(self.todos, id: \.self.id) { todo in
-                LazyVStack {
-                    Text(todo.title)
+        NavigationView {
+            ZStack {
+                ScrollView(showsIndicators: false) {
+                    ForEach(self.todos, id: \.self.id) { todo in
+                        NavigationLink {
+                            TodoDetailView(todo: todo)
+                        } label: {
+                            LazyVStack(alignment: .leading) {
+                                HStack {
+                                    Text(todo.title)
+                                        .padding(.vertical)
+                                        .foregroundColor(.black)
+                                    
+                                    Spacer()
+                                    
+                                    Text(todo.completed ? "✔️" : " ")
+                                }
+                                
+                                Divider()
+                            }
+                        }
+                    }
+                }
+                .padding()
+                
+                if todos.isEmpty {
+                    ProgressView()
                 }
             }
+            .navigationTitle("TODOs")
         }
-        .padding()
         .onAppear {
             interactors.todoInteractor
                 .getTodos(
@@ -29,6 +52,17 @@ struct ContentView: View {
                     error: $error
                 )
         }
+    }
+}
+
+struct TodoDetailView: View {
+    var todo: TodoListDto
+    
+    var body: some View {
+        VStack {
+            Text(todo.title)
+        }
+        .padding()
     }
 }
 

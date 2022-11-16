@@ -26,10 +26,10 @@ class NetworkLogger: EventMonitor {
         \n⚪️
         🙎‍♂️ Authorization: \(authorization)
         
-        - URL: \(request.request?.url?.absoluteString ?? ""))
+        - URL: \(request.request?.url?.absoluteString ?? "")
         - Method: \(String(describing: request.request?.httpMethod))
         - Header:\n\(request.request?.allHTTPHeaderFields ?? [:])
-        - Parameter:\n\(String(describing: request.request?.httpBody?.toPrettyPrinted)))
+        - Parameter:\n\(String(describing: request.request?.httpBody?.toPrettyPrinted))
         """)
     }
     

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct TodoListDto: Decodable {
     var userId: Int
     var id: Int

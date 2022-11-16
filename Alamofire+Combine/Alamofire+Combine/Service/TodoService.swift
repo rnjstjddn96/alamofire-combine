@@ -9,9 +9,7 @@ import Foundation
 import Alamofire
 import Combine
 
-protocol TodoService: ServiceProvider {
-    
-}
+protocol TodoService: ServiceProvider { }
 
 extension TodoService {
     var todos: AnyPublisher<APIResult<[TodoListDto]>, APIError> {

@@ -33,7 +33,7 @@ final class NetworkService: NetworkServiceInterface {
         )
         
         return SessionManager.shared
-            .session
+            .getSession()
             .request(
                 request.url,
                 method: request.method,
@@ -54,13 +54,13 @@ final class NetworkService: NetworkServiceInterface {
                     return APIResult(code: .SUCCESS, value: nil)
                 }
             }
-            .mapError({ (error) -> APIError in
+            .mapError { error -> APIError in
                 if let afError = error as? AFError {
                     return .HTTP(afError)
                 } else {
                     return .UNKNOWN
                 }
-            })
+            }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }

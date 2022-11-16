@@ -10,20 +10,16 @@ import Alamofire
 
 class SessionManager {
     static let shared: SessionManager = SessionManager()
+    private let session: Session
     
-    private init() { }
-    
-    var session: Session {
+    private init() {
         let urlSessionConfiguration = URLSessionConfiguration.af.default
-        urlSessionConfiguration.timeoutIntervalForRequest = 15
-        urlSessionConfiguration.timeoutIntervalForResource = 15
-        urlSessionConfiguration.waitsForConnectivity = true
-        
-        let apiLogger = NetworkLogger()
-        
-        return Session(
-            configuration: urlSessionConfiguration,
-            eventMonitors: [apiLogger]
-        )
+        urlSessionConfiguration.timeoutIntervalForRequest = 20
+        urlSessionConfiguration.timeoutIntervalForResource = 20
+        self.session = Session(configuration: urlSessionConfiguration)
+    }
+    
+    func getSession() -> Session {
+        return self.session
     }
 }
